@@ -70,7 +70,7 @@ const DeletePatientDialog = ({ patientId, patientName, onPatientDeleted }: Delet
             <AlertDialogContent>
                 <AlertDialogHeader>
                     <AlertDialogTitle className="text-2xl font-bold text-red-600">
-                        ⚠️ Permanently Delete Patient?
+                        Permanently Delete Patient?
                     </AlertDialogTitle>
                     <AlertDialogDescription className="space-y-3 pt-2">
                         <p className="text-base">
@@ -90,7 +90,7 @@ const DeletePatientDialog = ({ patientId, patientName, onPatientDeleted }: Delet
                             </ul>
                         </div>
                         <p className="text-base font-bold text-red-600">
-                            ⚠️ This action cannot be undone!
+                            This action cannot be undone!
                         </p>
                     </AlertDialogDescription>
                 </AlertDialogHeader>

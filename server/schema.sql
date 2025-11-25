@@ -1,13 +1,6 @@
-CREATE DATABASE IF NOT EXISTS vitalview;
+CREATE DATABASE vitalview;
 
 USE vitalview;
-
--- Drop tables if they exist to ensure clean slate
-DROP TABLE IF EXISTS vitals;
-
-DROP TABLE IF EXISTS beds;
-
-DROP TABLE IF EXISTS patients;
 
 -- Patient Table
 CREATE TABLE patients (
@@ -66,7 +59,7 @@ CREATE TABLE vitals (
     INDEX idx_created_at (created_at)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = 'Patient vital signs monitoring data';
 
--- Seed Data
+-- Seed Data/Dummy Data
 INSERT INTO
     patients (
         patient_name,

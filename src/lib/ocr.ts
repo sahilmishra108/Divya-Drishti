@@ -1,5 +1,5 @@
 
-// import { supabase } from '@/integrations/supabase/client';
+
 import { ROI } from '@/types/vitals';
 
 export interface OCRProgress {

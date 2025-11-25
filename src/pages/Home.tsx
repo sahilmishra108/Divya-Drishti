@@ -1,23 +1,29 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Activity, Camera, FileVideo, ArrowRight, Stethoscope, Check } from "lucide-react";
+import { Activity, Camera, FileVideo, ArrowRight, Stethoscope, Check, HeartPulse, ShieldCheck } from "lucide-react";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-teal-50/40">
+    <div className="min-h-screen bg-slate-50 overflow-hidden">
+      {/* Dynamic Background */}
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-30">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] animate-grid-flow"></div>
+        <div className="absolute top-0 left-0 right-0 h-full bg-gradient-to-b from-transparent via-slate-50/50 to-slate-50"></div>
+      </div>
+
       {/* Header with PATH Logo */}
-      <header className="absolute top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm animate-fade-in">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200/50 shadow-sm animate-fade-in transition-all duration-300">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4 animate-slide-in-right">
             <img
               src="/PATH_Logo_Color (1).png"
               alt="PATH Logo"
-              className="h-10 w-auto transition-transform hover:scale-105"
+              className="h-12 w-auto transition-transform hover:scale-105 drop-shadow-sm"
             />
           </div>
           <Link to="/patients" className="animate-slide-in-right group" style={{ animationDelay: '0.1s' }}>
-            <Button className="bg-[#0066CC] hover:bg-[#0052A3] text-white shadow-md hover:shadow-lg transition-all hover:scale-105">
+            <Button className="bg-[#0066CC] hover:bg-[#0052A3] text-white shadow-lg hover:shadow-xl transition-all hover:scale-105 rounded-full px-6">
               Patient Records
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Button>
@@ -25,136 +31,130 @@ const Home = () => {
         </div>
       </header>
 
-      {/* Tele-ICU Style Banner Section */}
-      <div className="pt-20 pb-16 px-6">
+      {/* Main Content */}
+      <div className="relative z-10 pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="relative w-full h-[600px] md:h-[700px] rounded-3xl overflow-hidden mb-12 shadow-2xl border-2 border-white/20 animate-scale-in">
-            {/* Split Layout Container */}
-            <div className="grid md:grid-cols-2 h-full">
-              {/* Left Section - Text Content */}
-              <div className="relative bg-gradient-to-br from-[#1e3a5f] via-[#1e4a6f] to-[#1e3a5f] p-8 md:p-12 lg:p-16 flex flex-col justify-center overflow-hidden">
-                {/* Grid Pattern Background */}
-                <div className="absolute inset-0 opacity-10" style={{
-                  backgroundImage: `
-                    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
-                  `,
-                  backgroundSize: '50px 50px'
-                }}></div>
 
-                {/* Star Pattern Background */}
-                <div className="absolute inset-0 opacity-15" style={{
-                  backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-                  backgroundSize: '40px 40px'
-                }}></div>
+          {/* Hero Section */}
+          <div className="relative w-full rounded-[2.5rem] overflow-hidden mb-20 shadow-2xl border border-white/50 animate-scale-in group">
+            {/* Split Layout Container */}
+            <div className="grid lg:grid-cols-2 min-h-[650px]">
+
+              {/* Left Section - Text Content */}
+              <div className="relative bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] p-10 md:p-16 flex flex-col justify-center overflow-hidden">
+
+                {/* Animated Background Elements */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+                  <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
+                  <div className="absolute top-1/2 right-0 w-72 h-72 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float" style={{ animationDelay: '2s' }}></div>
+                </div>
 
                 {/* Content */}
-                <div className="relative z-10 animate-fade-in-up">
-                  {/* Title */}
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4 leading-tight">
-                    Tele-Sanjeevani
-                  </h1>
-                  <div className="mb-6">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#4fc3f7] mb-2">
-                      Monitoring
-                    </h2>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#4fc3f7]">
-                      Platform
-                    </h2>
+                <div className="relative z-10 animate-fade-in-up space-y-8">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-blue-100 text-sm font-medium w-fit">
+                    <Activity className="w-4 h-4 text-blue-400 animate-pulse" />
+                    <span>Next-Gen Tele-ICU Platform</span>
                   </div>
 
-                  {/* Description */}
-                  <p className="text-white/90 text-base md:text-lg lg:text-xl mb-8 leading-relaxed max-w-lg">
-                    Advanced telemedicine infrastructure delivering real-time vital signs monitoring and comprehensive analytics for critical care environments.
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
+                    Tele-<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Sanjeevani</span>
+                  </h1>
+
+                  <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-xl">
+                    Revolutionizing critical care with real-time AI monitoring, instant vital extraction, and seamless patient management infrastructure.
                   </p>
 
-                  {/* View Patient Records Button */}
-                  <Link to="/patients" className="inline-block mb-10">
-                    <Button size="lg" className="bg-white text-[#1e3a5f] hover:bg-white/90 text-base md:text-lg px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105 group">
-                      <FileVideo className="w-5 h-5 mr-2" />
-                      View Patient Records
-                      <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </Link>
 
-                  {/* Features with Checkmarks */}
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-4 h-4 text-white" />
+
+                  {/* Features Grid */}
+                  <div className="grid grid-cols-2 gap-6 pt-8 border-t border-white/10">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 rounded-lg bg-blue-500/20 text-blue-400">
+                        <HeartPulse className="w-5 h-5" />
                       </div>
-                      <span className="text-white text-base md:text-lg font-medium">Advanced OCR Technology</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-4 h-4 text-white" />
+                      <div>
+                        <h4 className="text-white font-semibold">Real-time Vitals</h4>
+                        <p className="text-slate-400 text-sm">Instant health tracking</p>
                       </div>
-                      <span className="text-white text-base md:text-lg font-medium">Real-time Data Extraction</span>
                     </div>
+
                   </div>
                 </div>
               </div>
 
-              {/* Right Section - Hospital Image */}
-              <div className="relative hidden md:block">
+              {/* Right Section - Image/Visual */}
+              <div className="relative hidden lg:block overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0f172a]/80 z-10"></div>
                 <img
                   src="/Gemini_Generated_Image_6xwqr56xwqr56xwq.png"
-                  alt="ICU Monitoring Room"
-                  className="w-full h-full object-cover"
+                  alt="ICU Monitoring"
+                  className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105"
                 />
-                {/* Subtle overlay for better text contrast if needed */}
-                <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#1e3a5f]/10"></div>
+
+
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Hero Section */}
-      <div className="pb-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full mb-6 animate-scale-in">
-              <Stethoscope className="w-4 h-4 text-[#0066CC]" />
-              <span className="text-sm font-medium text-[#0066CC]">Healthcare Technology</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 max-w-3xl mx-auto mb-6 leading-tight">
-              Patient-Centric Vital Signs Monitoring
-            </h2>
-            <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Access comprehensive patient records with real-time vital signs monitoring, video analysis, and detailed health analytics—all organized by patient.
-            </p>
+          {/* Feature Cards Section */}
+          <div className="grid md:grid-cols-3 gap-8 mb-20">
+            {[
+              {
+                icon: <Camera className="w-8 h-8 text-purple-500" />,
+                title: "AI Vision Analysis",
+                desc: "Powered by Hugging Face VLMs and Tesseract OCR for high-precision vital sign extraction from monitor feeds.",
+                color: "purple"
+              },
+              {
+                icon: <Activity className="w-8 h-8 text-blue-500" />,
+                title: "Live Monitoring",
+                desc: "Real-time dashboard updates with sub-second latency for critical decision making.",
+                color: "blue"
+              },
+              {
+                icon: <FileVideo className="w-8 h-8 text-teal-500" />,
+                title: "Patient Dashboards",
+                desc: "Centralized patient profiles with detailed vital history logs, graphical trends, and instant dashboard access.",
+                color: "teal"
+              }
+            ].map((feature, idx) => (
+              <Card key={idx} className="p-8 border-none shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white/80 backdrop-blur-sm group">
+                <div className={`w-16 h-16 rounded-2xl bg-${feature.color}-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-slate-800 mb-3">{feature.title}</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  {feature.desc}
+                </p>
+              </Card>
+            ))}
           </div>
 
-          {/* Single Patient Records Card */}
-          <div className="flex justify-center mt-20">
-            <Link to="/patients" className="block max-w-md w-full">
-              <Card className="p-10 hover:shadow-2xl transition-all duration-300 border-2 border-slate-200 bg-white hover:border-[#0066CC] group cursor-pointer animate-fade-in-up">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#0066CC] to-[#00897B] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg mx-auto">
-                  <FileVideo className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-3xl font-bold text-slate-800 mb-4 text-center">Patient Records</h3>
-                <p className="text-slate-600 leading-relaxed mb-6 text-center">
-                  View all patients and access their comprehensive dashboards including real-time monitoring, video analysis, and vital signs history.
-                </p>
-                <div className="flex items-center justify-center text-[#0066CC] font-semibold text-lg group-hover:translate-x-2 transition-transform">
-                  View All Patients
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </div>
-              </Card>
+          {/* Call to Action */}
+          <div className="flex justify-center">
+            <Link to="/patients" className="w-full max-w-2xl">
+              <div className="relative group cursor-pointer">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+
+              </div>
             </Link>
           </div>
-
 
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-white py-10 mt-24 border-t-4 border-[#0066CC]">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-slate-300 text-base">
-            Powered by <strong className="text-white font-semibold">PATH</strong>
-          </p>
+      <footer className="bg-slate-900 text-white py-12 border-t border-slate-800">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-2">
+              <img src="/PATH_Logo_Color (1).png" alt="PATH" className="h-8 w-auto brightness-0 invert opacity-80" />
+              <span className="text-slate-400 text-sm"> 2025 Tele-Sanjeevani</span>
+            </div>
+            <p className="text-slate-500 text-sm">
+              Empowering Healthcare with Artificial Intelligence
+            </p>
+          </div>
         </div>
       </footer>
     </div>

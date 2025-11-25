@@ -138,7 +138,7 @@ const CameraFeed = ({ patientId }: CameraFeedProps) => {
     const imageBase64 = canvas.toDataURL('image/jpeg', 0.95);
     setPreviewUrl(imageBase64);
 
-    // Use Tesseract OCR to extract vitals (no longer throws errors)
+    // Use Tesseract OCR to extract vitals 
     const ocrResult = await extractVitalsWithOCR(
       imageBase64,
       monitorROIs,

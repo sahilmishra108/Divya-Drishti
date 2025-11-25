@@ -2,7 +2,7 @@
 
 A comprehensive telemedicine platform for real-time patient vital signs monitoring using advanced OCR technology and AI-powered analysis.
 
-## 🚀 Features
+##  Features
 
 - **Patient Records System**: Manage patient admissions, bed assignments, and medical history.
 - **Real-Time Camera Monitoring**: Live camera feed with automatic vital signs extraction every 3 seconds.
@@ -13,7 +13,7 @@ A comprehensive telemedicine platform for real-time patient vital signs monitori
 - **Data Export**: Export monitoring data to CSV for further analysis.
 - **Responsive Design**: Works seamlessly across desktop and mobile devices.
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Frontend
 - **Framework**: React 18.3.1 with TypeScript
@@ -33,7 +33,7 @@ A comprehensive telemedicine platform for real-time patient vital signs monitori
   - **Primary**: Hugging Face Inference API (Qwen2.5-VL-7B-Instruct)
   - **Secondary**: Tesseract.js (On-device OCR)
 
-## 🗄️ Database Schema
+##  Database Schema
 
 The application uses a relational MySQL database with the following structure:
 
@@ -117,7 +117,7 @@ Stores time-series vital sign data.
    npm run dev
    ```
 
-## 📖 Usage
+##  Usage
 
 ### Patient Records
 1. Navigate to the "Patient Records" tab.
@@ -135,19 +135,19 @@ Stores time-series vital sign data.
 2. Filter data by date range.
 3. View charts and trends for specific patients.
 
-## 🔒 Security & Privacy
+##  Security & Privacy
 
 - **Data Isolation**: Patient data is strictly segregated in the database.
 - **Secure Communication**: API calls and real-time events are handled securely.
 - **Environment Variables**: Sensitive keys (DB credentials, API keys) are never committed to version control.
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
 4. Submit a pull request
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License.
